@@ -41,29 +41,25 @@ def main():
     input_args = parse_args()
     try:
         img = Image.open(input_args.image)
-    except FileNotFoundError:
-        exit("Файл не найден")
-    except OSError:
-        exit("Файл не поддерживается")
-    new_size = calculate_new_size(
+        new_size = calculate_new_size(
         *img.size,
         input_args.width,
         input_args.height,
         input_args.scale
-    )
-    try:
+        )
         img = img.resize(new_size)
-    except ValueError:
-        exit("Не корректные значения итоговых размеров")
-    image_path = create_image_path(
-        input_args.image,
-        *new_size,
-        output_path=input_args.output
-    )
-    try:
+        image_path = create_image_path(
+            input_args.image,
+            *new_size,
+            output_path=input_args.output
+        )
         img.save(image_path)
     except FileNotFoundError:
-        exit("Не удалось сохранить. Проверьте существование пути")
+        exit("Файл или дирректория не найдены")
+    except OSError:
+        exit("Файл не поддерживается")
+    except ValueError:
+        exit("Не корректные значения итоговых размеров")
     print("Изображение создано")
 
 
