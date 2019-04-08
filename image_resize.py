@@ -5,11 +5,11 @@ import os.path
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('image',  help='This will be option One')
-    parser.add_argument('-w', '--width', help='This will be option One', type=int)
-    parser.add_argument('-hg', '--height', help='This will be option two', type=int)
-    parser.add_argument('-s', '--scale', help='This will be option three', type=float)
-    parser.add_argument('-o', '--output', help='This will be option three')
+    parser.add_argument('image',  help='Path to source image.')
+    parser.add_argument('-w', '--width', help='Desired width', type=int)
+    parser.add_argument('-hg', '--height', help='Desired height', type=int)
+    parser.add_argument('-s', '--scale', help='Desired scale', type=float)
+    parser.add_argument('-o', '--output', help='Path to the finished image')
     return parser.parse_args()
 
 
