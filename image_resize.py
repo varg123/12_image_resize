@@ -42,10 +42,10 @@ def main():
     try:
         img = Image.open(input_args.image)
         new_size = calculate_new_size(
-        *img.size,
-        input_args.width,
-        input_args.height,
-        input_args.scale
+            *img.size,
+            input_args.width,
+            input_args.height,
+            input_args.scale
         )
         img = img.resize(new_size)
         image_path = create_image_path(
