@@ -25,10 +25,6 @@ def parse_args():
         parser.error(
             'One of the following parameters must be specified: -w, -hg or -s'
         )
-    if os.path.isdir(input_args.image):
-        parser.error('The specified path is directory')
-    if input_args.output and os.path.isdir(input_args.output):
-        parser.error('The specified path is directory')
     return input_args
 
 
