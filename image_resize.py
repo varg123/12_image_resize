@@ -63,7 +63,7 @@ def main():
     try:
         img.save(image_path)
     except FileNotFoundError:
-        exit("Файл не найден")
+        exit("Не удалось сохранить. Проверьте существование пути")
 
 
 if __name__ == '__main__':
